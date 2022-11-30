@@ -1,8 +1,7 @@
-### This is a depolyment guide for a library management system project inspired by [mehmetpekdemir](https://github.com/mehmetpekdemir/Library-Management-System).
+### 1. Description:
+This is a depolyment guide developed by Chongzhi Xu(cx2273) and Xiaoran Yuan(xy2508) for a library management system project inspired by [mehmetpekdemir](https://github.com/mehmetpekdemir/Library-Management-System). We developed and deployed this web application using Spring Boot, visit the main page for this app on this URL [http://3.141.43.205:8081/](http://3.141.43.205:8081/).
 
-#### We developed and deployed a web application using Spring Boot, visit the main website on this [URL http://3.141.43.205:8081/](http://3.141.43.205:8081/).
-
-### Tech stack:
+### 2. Tech stack:
   - Spring Boot
   - Spring Data Jpa
   - AWS RDS Database
@@ -11,8 +10,7 @@
   - Thymeleaf
   - Bootstrap4
 
-
-### Requirements
+### 3. Requirements
 
 For building and running the application you need:
 - [JDK 18](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
@@ -21,24 +19,100 @@ For building and running the application you need:
 - [Docker](https://www.docker.com)
 - [AWS EC2/RDS](https://aws.amazon.com/aws/ec2)
 
+### 4. Deploy this application on EC2 using Docker
+(1) Java Environment Setup\
+\
+Visit JDK 18 releases page to download the latest archive.
+```
+  sudo yum install -y curl wget
+  curl -O https://download.java.net/java/GA/jdk18/43f95e8614114aeaa8e8a5fcf20a682d/36/GPL/openjdk-18_linux-x64_bin.tar.gz
+```
+Extract downloaded file using tar command.
+```
+  tar xvf openjdk-18_linux-x64_bin.tar.gz
+```
+Move the resulting folder to /opt directory.
+```
+  sudo mv jdk-18 /opt/
+```
+Configure Java environment:
+```
+sudo tee /etc/profile.d/jdk18.sh <<EOF
+export JAVA_HOME=/opt/jdk-18
+export PATH=\$PATH:\$JAVA_HOME/bin
+EOF
+```
+Source your profile file and check java command.
+```
+source /etc/profile.d/jdk18.sh
+```
+Confirm Java version.
+```
+$ echo $JAVA_HOME
+/opt/jdk-18
 
+$ java -version
+java version "18" 2022-03-22
+Java(TM) SE Runtime Environment (build 18+36-2087)
+Java HotSpot(TM) 64-Bit Server VM (build 18+36-2087, mixed mode, sharing)
+```
 
-### Build & Run 
+(2) Install Maven\
+\
+Following are the set of commands need to be executed sequentially to install maven.
+```
+sudo wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+```
+```
+sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
+```
+```
+sudo yum install -y apache-maven
+```
+```
+mvn –version
+```
+And you all set to run any “mvn” (maven) command in ec2 instance.
+
+(3) Install Docker\
 
 ```
-  mvn clean install && mvn spring-boot:run
+sudo yum update -y
+```
+```
+sudo amazon-linux-extras install docker
+```
+```
+sudo service docker start
+```
+```
+sudo usermod -a -G docker ec2-user
+```
+
+(4) Copy this project to your EC2\
+
+```
+  sudo yum install git -y
+```
+```
+  git clone https://github.com/ChongzhiXu/ELEN6770_Library_Management_System.git
+```
+
+(5) Build and run this project in docker
+
+```
+mvn clean install
+```
+```
+docker build -t 6770-project . 
+```
+```
+docker run -it -p 8081:8081 6770-project
 ```
   
-### Port
+(6) Port\
+\
+Add port 8081 from antwhere ipv4 inbound rules in security groups then this project will be presented in
 ```
-  http://localhost:8081
+  http://(Your Aws Public IPv4 address):8081
 ```
-
-### Features
-
-![Books](https://github.com/mehmetpekdemir/Library-Management-System/blob/master/Photo/Books.png)
-![addBook](https://github.com/mehmetpekdemir/Library-Management-System/blob/master/Photo/addBook.png)
-![search](https://github.com/mehmetpekdemir/Library-Management-System/blob/master/Photo/search.png)
-![Authors](https://github.com/mehmetpekdemir/Library-Management-System/blob/master/Photo/Authors.png)
-![Categories](https://github.com/mehmetpekdemir/Library-Management-System/blob/master/Photo/Categories.png)
-![Publishers](https://github.com/mehmetpekdemir/Library-Management-System/blob/master/Photo/Publishers.png)
