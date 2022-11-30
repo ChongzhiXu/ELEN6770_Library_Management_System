@@ -1,6 +1,6 @@
-### This is a depolyment guide for a library management system project inspired by mehmetpekdemir.
+### This is a depolyment guide for a library management system project inspired by [mehmetpekdemir](https://github.com/mehmetpekdemir/Library-Management-System).
 
-#### We developed and deployed a web application using Spring Boot, visit the main website on [url](http://3.141.43.205:8081/).
+#### We developed and deployed a web application using Spring Boot, visit the main website on this [URL http://3.141.43.205:8081/](http://3.141.43.205:8081/).
 
 ### Tech stack:
   - Spring Boot
@@ -15,7 +15,7 @@
 ### Requirements
 
 For building and running the application you need:
-- [JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) or newer
+- [JDK 18](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 - [Maven 3](https://maven.apache.org)
 - [Lombok](https://projectlombok.org)
 - [Docker](https://www.docker.com)
