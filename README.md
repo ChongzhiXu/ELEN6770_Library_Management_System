@@ -1,7 +1,10 @@
 ### 1. Description:
-This is a depolyment guide developed by Chongzhi Xu(cx2273) and Xiaoran Yuan(xy2508) for a library management system project inspired by [mehmetpekdemir](https://github.com/mehmetpekdemir/Library-Management-System). We developed and deployed this web application using Spring Boot, visit the main page for this app on this URL [http://3.141.43.205:8081/](http://3.141.43.205:8081/).
+This is a depolyment guide developed by Chongzhi Xu(cx2273) and Xiaoran Yuan(xy2508) for a library management system project inspired by [mehmetpekdemir](https://github.com/mehmetpekdemir/Library-Management-System). We developed and deployed this web application using Spring Boot, every one can visit the main page for this app on this URL [http://3.141.43.205:8081/](http://3.141.43.205:8081/).
 
-### 2. Tech stack:
+### 2. User Guide:
+Visit the main page for this app on this URL [http://3.141.43.205:8081/](http://3.141.43.205:8081/)
+
+### 3. Tech stack:
   - Spring Boot
   - Spring Data Jpa
   - AWS RDS Database
@@ -10,7 +13,7 @@ This is a depolyment guide developed by Chongzhi Xu(cx2273) and Xiaoran Yuan(xy2
   - Thymeleaf
   - Bootstrap4
 
-### 3. Requirements
+### 4. Requirements
 
 For building and running the application you need:
 - [JDK 18](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
@@ -19,7 +22,7 @@ For building and running the application you need:
 - [Docker](https://www.docker.com)
 - [AWS EC2/RDS](https://aws.amazon.com/aws/ec2)
 
-### 4. Deploy this application on EC2 using Docker
+### 5. Deploy this application on EC2 using Docker
 (1) Java Environment Setup\
 \
 Visit JDK 18 releases page to download the latest archive.
@@ -114,5 +117,7 @@ docker run -it -p 8081:8081 6770-project
 \
 Add port 8081 from antwhere ipv4 inbound rules in security groups then this project will be presented in
 ```
-  http://(Your Aws Public IPv4 address):8081
+  http://(Your Aws EC2 Public IPv4 address):8081
 ```
+
+### 6. Now you can start enjoying using this application.
