@@ -1,13 +1,16 @@
-### This is a library management system project.
+### This is a depolyment guide for a library management system project inspired by mehmetpekdemir.
 
-#### I developed a web application by using Spring Boot.
+#### We developed and deployed a web application using Spring Boot, visit the main website on [url](http://3.141.43.205:8081/).
 
 ### Tech stack:
   - Spring Boot
   - Spring Data Jpa
-  - H2 Database
+  - AWS RDS Database
+  - Docker
+  - AWS EC2
   - Thymeleaf
   - Bootstrap4
+
 
 ### Requirements
 
@@ -15,6 +18,10 @@ For building and running the application you need:
 - [JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) or newer
 - [Maven 3](https://maven.apache.org)
 - [Lombok](https://projectlombok.org)
+- [Docker](https://www.docker.com)
+- [AWS EC2/RDS](https://aws.amazon.com/aws/ec2)
+
+
 
 ### Build & Run 
 
