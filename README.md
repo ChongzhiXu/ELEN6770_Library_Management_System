@@ -2,7 +2,9 @@
 This is a depolyment guide developed by Chongzhi Xu(cx2273) and Xiaoran Yuan(xy2508) for a library management system project inspired by [mehmetpekdemir](https://github.com/mehmetpekdemir/Library-Management-System). We developed and deployed this web application using Spring Boot, every one can visit the main page for this app on this URL [http://3.141.43.205:8081/](http://3.141.43.205:8081/).
 
 ### 2. User Guide:
-Visit the main page for this app on this URL [http://3.141.43.205:8081/](http://3.141.43.205:8081/)
+Visit the main page for this app on this URL [http://3.141.43.205:8081/](http://3.141.43.205:8081/)\
+
+From the navigation bar, we can see there are 4 main micro-services: categories management, books management, 
 
 ### 3. Tech stack:
   - Spring Boot
@@ -120,4 +122,10 @@ Add port 8081 from antwhere ipv4 inbound rules in security groups then this proj
   http://(Your Aws EC2 Public IPv4 address):8081
 ```
 
-### 6. Now you can start enjoying using this application.
+### 6. Now you can start enjoying using or trying to deploy this simple application.
+
+### 7. About:
+This is the final project for ELEN6770 course 2022 fall term, designed and developed by\
+Chongzhi Xu, cx2273@columbia.edu,\
+Xiaoran Yuan, xy2508@columbia.edu.\
+If having questions, feel free to contact us. Thank you for reading.
