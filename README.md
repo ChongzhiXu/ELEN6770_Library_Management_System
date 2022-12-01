@@ -4,7 +4,9 @@ This is a depolyment guide developed by Chongzhi Xu(cx2273) and Xiaoran Yuan(xy2
 ### 2. User Guide:
 Visit the main page for this app on this URL [http://3.141.43.205:8081/](http://3.141.43.205:8081/)\
 
-From the navigation bar, we can see there are 4 main micro-services: categories management, books management, 
+From the navigation bar, we can see there are 4 main micro-services: categories management, books management, publisher management and authors management. You can navigate to any of the services by clicking the navigation bar. All services have full add, delete, modify functions based on the users actions. The user interface are clean and interactive with good guidelines. The base functions are shown below:
+
+
 
 ### 3. Tech stack:
   - Spring Boot
